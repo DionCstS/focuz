@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\RankingController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -8,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 // Rotas de Autenticação sem proteção (para registrar e fazer login)
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::get('/ranking', [RankingController::class, 'index']);
 
 // Rotas protegidas pelo middleware do Sanctum (precisam de um token válido)
 Route::middleware('auth:sanctum')->group(function () {

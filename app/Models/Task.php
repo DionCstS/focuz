@@ -9,7 +9,13 @@ class Task extends Model
     protected $fillable = [
         'title',
         'description',
-        'is_completed'
+        'is_completed',
+        'points_awarded'
+    ];
+
+    protected $casts = [
+        'is_completed' => 'boolean',
+        'points_awarded' => 'boolean',
     ];
 
     public function user()
