@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 // Rotas de Autenticação sem proteção (para registrar e fazer login)
+Route::get('/teste', function () {
+    return response()->json([
+        'message' => 'Comunicação bem-sucedida! 😎',
+        'status' => 'ok'
+    ]);
+});
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/ranking', [RankingController::class, 'index']);
